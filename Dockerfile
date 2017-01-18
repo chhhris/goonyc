@@ -6,3 +6,4 @@ ADD Gemfile /getoutofnyc-rails/Gemfile
 ADD Gemfile.lock /getoutofnyc-rails/Gemfile.lock
 RUN bundle install
 ADD . /getoutofnyc-rails
+EXPOSE 80
