@@ -1,0 +1,19 @@
+{
+ "AWSEBDockerrunVersion": 2,
+ "Image": {
+    "Name": "getoutofnyc-rails",
+    "Update": "true"
+  },
+ "Ports": [
+   {
+     "ContainerPort": "80"
+   }
+ ],
+ "Volumes": [
+   {
+     "ContainerDirectory": "/var/app",
+     "HostDirectory": "/var/app"
+   }
+ ],
+ "Logging": "/var/log"
+}
