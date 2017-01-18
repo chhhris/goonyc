@@ -1,0 +1,12 @@
+development: &default
+  adapter: postgresql
+  encoding: unicode
+  database: getoutofnyc-rails_development
+  pool: 5
+  username: postgres
+  password: <%= ENV['GETOUTOFNYC-RAILS_DATABASE_PASSWORD'] %>
+  host: db
+
+test:
+  <<: *default
+  database: getoutofnyc-rails_test

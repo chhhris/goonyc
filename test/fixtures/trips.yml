@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  name: MyString
+  price: MyString
+  depart_at: 2017-01-18 00:50:54
+  return_at: 2017-01-18 00:50:54
+  url: MyString
+  featured: false
+
+two:
+  code: MyString
+  name: MyString
+  price: MyString
+  depart_at: 2017-01-18 00:50:54
+  return_at: 2017-01-18 00:50:54
+  url: MyString
+  featured: false
