@@ -1,10 +1,17 @@
 class TripsController < ApplicationController
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
+  def oj
+    # lock this down with Basic Authentication in routes.rb
+
+    load_trips
+  end
+
   # GET /trips
   # GET /trips.json
   def index
-    @trips = Trip.all
+    # redirecting /oj to here
+    load_trips
   end
 
   # GET /trips/1
@@ -64,11 +71,19 @@ class TripsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trip
-      @trip = Trip.find(params[:id])
+      @trip = Trip.where(featured: true).first || Trip.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
       params.require(:trip).permit(:code, :name, :price, :depart_at, :return_at, :url, :featured)
+    end
+
+    def load_trips
+      if Trip.where(featured: true).blank?
+        Trip.last.update_column(:featured, true)
+      end
+
+      @trips = Trip.all.order(price: :asc)
     end
 end

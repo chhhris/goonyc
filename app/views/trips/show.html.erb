@@ -1,39 +1,15 @@
+<link rel="stylesheet" href="app.css" type="text/css" />
 <p id="notice"><%= notice %></p>
+<%
+    @price = "$#{sprintf("%.0f", @trip.price)}"
+    @departure_date = "#{@trip.depart_at.strftime('%B').downcase} #{@trip.depart_at.strftime('%e').downcase}"
+    @return_date = @trip.return.strftime('%e')
+    @return_date.prepend("#{@trip.return.strftime('%B').downcase} ") if @trip.return.strftime('%B') != @trip.depart_at.strftime('%B')
+%>
+<div class="container">
+  <div class="<%= @trip.code.downcase %>-details">
+    <%= render partial: "destinations/#{@trip.code.downcase}" %>
+  </div>
+</div>
 
-<p>
-  <strong>Code:</strong>
-  <%= @trip.code %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @trip.name %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @trip.price %>
-</p>
-
-<p>
-  <strong>Depart at:</strong>
-  <%= @trip.depart_at %>
-</p>
-
-<p>
-  <strong>Return at:</strong>
-  <%= @trip.return_at %>
-</p>
-
-<p>
-  <strong>Url:</strong>
-  <%= @trip.url %>
-</p>
-
-<p>
-  <strong>Featured:</strong>
-  <%= @trip.featured %>
-</p>
-
-<%= link_to 'Edit', edit_trip_path(@trip) %> |
-<%= link_to 'Back', trips_path %>
+<%= render partial: 'footer' %>
