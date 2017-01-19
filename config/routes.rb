@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  # resources :trips, path: '' do
-  #   get :about, to: 'trips#about'
-  #   get :contact
-  #   get :oj, to: 'trips#index'
-  # end
+
+  resources :trips, except: [:show, :index, :about, :oj, :contact], path: ''
 
   get '/', to: 'trips#show'
   get 'contact', to: 'trips#contact'
