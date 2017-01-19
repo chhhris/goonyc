@@ -11,6 +11,12 @@ class TripsController < ApplicationController
     end
   end
 
+  def refresh
+    Trip.generate_flights
+
+    redirect_to :oj
+  end
+
   def about
 
     respond_to do |format|
