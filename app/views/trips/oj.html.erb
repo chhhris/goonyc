@@ -40,7 +40,7 @@
 </style>
 
 <%
-    DESTINATION_NAMES = {
+    @destinations = {
       stt: 'Saint Thomas',
       cun: 'Tulum',
       pos: 'Port of Spain'
@@ -64,9 +64,10 @@
     </tr>
     <% @trips.each_with_index do |trip, index| %>
       <%
-          departure_date = "#{trip.departure.strftime('%B').downcase} #{trip.departure.strftime('%e').downcase}"
-          return_date = trip.return.strftime('%e')
-          return_date.prepend("#{trip.return.strftime('%B').downcase} ") if trip.return.strftime('%B') != trip.departure.strftime('%B')
+          departure_date = "#{trip.depart_at.strftime('%B').downcase} #{trip.depart_at.strftime('%e').downcase}"
+          return_date = trip.return_at.strftime('%e')
+          return_date.prepend("#{trip.return_at.strftime('%B').downcase} ") if trip.return_at.strftime('%B') != trip.depart_at.strftime('%B')
+          # return_date = format_return(trip.return_at)
       %>
       <tr class="<%= trip.featured? ? 'featuredRow' : "#{index.odd?}Row" %>">
         <td>
@@ -79,7 +80,7 @@
             </form>
           <% end %>
         </td>
-        <td><%= DESTINATION_NAMES[trip.destination_code.downcase.to_sym] %></td>
+        <td><%= trip.name %></td>
         <td><%= "$#{sprintf("%.0f", trip.price)}" %></td>
         <td><%= departure_date %>-<%= return_date %></td>
         <td><a href="<%= trip.url %>" target="_blank">Link</a></td>

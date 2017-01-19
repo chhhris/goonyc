@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_action :set_trip, only: [:index, :show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def oj
     # lock this down with Basic Authentication in routes.rb
@@ -28,7 +28,8 @@ class TripsController < ApplicationController
   # GET /trips
   # GET /trips.json
   def index
-    # redirecting /oj to here
+    # redirect /oj to here
+    load_trips
 
     respond_to do |format|
       format.html { render :index }
