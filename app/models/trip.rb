@@ -10,6 +10,7 @@ class Trip < ApplicationRecord
       CUN: 'Tulum',
       POS: 'Port of Spain'
     }
+
     PARAMS = {
       country: 'US',
       currency: 'USD',
@@ -68,7 +69,7 @@ class Trip < ApplicationRecord
         # link to book it
         booking_link = cheapest_flight['PricingOptions'].first['DeeplinkUrl']
 
-        trip = Trip.new(code: code, depart_at: depart_at, return_at: return_at,
+        trip = Trip.new(name: DESTINATION_NAME_MAPPING[code.to_sym], code: code, depart_at: depart_at, return_at: return_at,
             price: flight_cost, url: booking_link, featured: false)
 
         trip.save
