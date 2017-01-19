@@ -10,3 +10,13 @@ development: &default
 test:
   <<: *default
   database: getoutofnyc-rails_test
+
+production:
+  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  database: getoutofnyc
+  username: getoutofnyc
+  password: <%= ENV['GETOUTOFNYC-RAILS_DATABASE_PASSWORD'] %>
+  host: aa1wnfoa5vacmfw.c8plrwqkyfst.us-east-1.rds.amazonaws.com
+  port: 5432

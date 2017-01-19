@@ -1,9 +1,5 @@
 {
  "AWSEBDockerrunVersion": 2,
- "Image": {
-    "Name": "getoutofnyc-rails",
-    "Update": "true"
-  },
  "Ports": [
    {
      "ContainerPort": "80"
