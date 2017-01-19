@@ -20,9 +20,7 @@ class TripsController < ApplicationController
       prev_trip.update_column(:featured, false)
     end
 
-    respond_to do |format|
-      format.html { render :oj }
-    end
+    redirect_to oj_path
   end
 
   def refresh
