@@ -13,3 +13,57 @@
  *= require_tree .
  *= require_self
  */
+
+/* app.css */
+
+a, a:link, a:visited {
+  text-decoration: none;
+  color: #4f4f4f;
+}
+
+.container {
+  position: relative;
+  min-height: 100%;
+  font-family: monospace;
+  letter-spacing: 2.5px;
+  font-size: 350%;
+  font-weight: 100;
+}
+
+.cun-details {
+  float: right;
+  padding-right: 15%;
+  padding-top: 35%;
+}
+.stt-details {
+  float: right;
+  padding-right: 15%;
+  padding-top: 20%;
+}
+.pos-details {
+  bottom: 15;
+  left: 35;
+  position: absolute;
+  font-size: 90%;
+}
+
+.footer {
+  position: absolute;
+  bottom: 15;
+  font-family: monospace;
+  letter-spacing: 1.25px;
+  font-size: 250%;
+  font-weight: 100;
+}
+
+.stt-footer {
+  left: 50;
+}
+
+.pos-footer {
+  right: 100;
+}
+
+.cun-footer {
+  right: 200;
+}
