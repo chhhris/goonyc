@@ -9,11 +9,11 @@
   <meta name="theme-color" content="#ffffff">
   <style>
     .background-image {
-      background-image: url("<%= @featured_trip ? "#{@featured_trip.destination_code.downcase}.jpg" : '' %>");
+      background-image: url("<%= @trip ? "#{@trip.code.downcase}.jpg" : '' %>");
       background-size: cover;
     }
   </style>
 </head>
-<body class="<%= 'background-image' if @featured_trip %>">
+<body class="<%= 'background-image' if @trip %>">
   <%= yield %>
 </body>
