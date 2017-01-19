@@ -18,5 +18,4 @@ production:
   database: getoutofnyc
   username: getoutofnyc
   password: <%= ENV['GETOUTOFNYC-RAILS_DATABASE_PASSWORD'] %>
-  host: aa1wnfoa5vacmfw.c8plrwqkyfst.us-east-1.rds.amazonaws.com
   port: 5432
