@@ -11,6 +11,26 @@ class TripsController < ApplicationController
     end
   end
 
+  def select
+    prev_trip = Trip.find_by_featured(true)
+    @trip = Trip.find(params[:trip_id])
+    @trip.featured = true
+
+    if @trip.save
+      prev_trip.update_column(:featured, false)
+    end
+
+    respond_to do |format|
+      if @trip.save
+        format.html { redirect_to @trip, notice: 'Trip was successfully created.' }
+        format.json { render :show, status: :created, location: @trip }
+      else
+        format.html { render :new }
+        format.json { render json: @trip.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   def refresh
     Trip.generate_flights
 
@@ -63,7 +83,13 @@ class TripsController < ApplicationController
   # POST /trips
   # POST /trips.json
   def create
-    @trip = Trip.new(trip_params)
+    prev_trip = Trip.where(featured: true)
+    @trip = Trip.find(params[:trip_id])
+    @trip.featured = true
+
+    if @trip.save
+      prev_trip.update_column(:featured, false)
+    end
 
     respond_to do |format|
       if @trip.save
@@ -79,6 +105,7 @@ class TripsController < ApplicationController
   # PATCH/PUT /trips/1
   # PATCH/PUT /trips/1.json
   def update
+    @trip = Trip.find(params[:id])
     respond_to do |format|
       if @trip.update(trip_params)
         format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
@@ -103,12 +130,12 @@ class TripsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_trip
-      @trip = Trip.where(featured: true).first || Trip.find(params[:id])
+      @trip = params[:id].present? ? Trip.find(params[:id]) : Trip.where(featured: true).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
-      params.require(:trip).permit(:code, :name, :price, :depart_at, :return_at, :url, :featured)
+      params.permit(:code, :name, :price, :depart_at, :return_at, :url, :featured)
     end
 
     def load_trips
