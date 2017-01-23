@@ -3,70 +3,68 @@ body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
   margin: 33px;
 }
 
-/* line 10, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 9, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 14px;
   margin: 33px;
 }
 
-/* line 17, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 15, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px;
 }
 
-/* line 23, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 21, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 a {
   color: #000;
 }
-/* line 26, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 24, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 a:visited {
   color: #666;
 }
-/* line 30, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 28, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 a:hover {
   color: #fff;
   background-color: #000;
 }
 
-/* line 36, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 34, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 th {
   padding-bottom: 5px;
 }
 
-/* line 40, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 38, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 td {
   padding-bottom: 7px;
   padding-left: 5px;
   padding-right: 5px;
 }
 
-/* line 47, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 45, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 52, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 50, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 #notice {
   color: green;
 }
 
-/* line 56, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 54, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 62, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 60, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -75,7 +73,7 @@ div.field, div.actions {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 70, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 68, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -86,13 +84,13 @@ div.field, div.actions {
   background-color: #c00;
   color: #fff;
 }
-/* line 81, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 79, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;
 }
 
-/* line 87, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
+/* line 85, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/scaffolds.scss */
 label {
   display: block;
 }
@@ -111,15 +109,14 @@ label {
 
 
  */
-
 /* app.css */
-
-
+/* line 20, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 a, a:link, a:visited {
   text-decoration: none;
   color: #4f4f4f;
 }
 
+/* line 25, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .container {
   position: relative;
   min-height: 100%;
@@ -129,16 +126,21 @@ a, a:link, a:visited {
   font-weight: 100;
 }
 
+/* line 34, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .cun-details {
   float: right;
   padding-right: 15%;
   padding-top: 35%;
 }
+
+/* line 39, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .stt-details {
   float: right;
   padding-right: 15%;
   padding-top: 20%;
 }
+
+/* line 44, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .pos-details {
   bottom: 15;
   left: 35;
@@ -146,6 +148,7 @@ a, a:link, a:visited {
   font-size: 90%;
 }
 
+/* line 51, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .footer {
   position: absolute;
   bottom: 15;
@@ -155,14 +158,17 @@ a, a:link, a:visited {
   font-weight: 100;
 }
 
+/* line 60, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .stt-footer {
   left: 50;
 }
 
+/* line 64, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .pos-footer {
   right: 100;
 }
 
+/* line 68, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .cun-footer {
   right: 200;
 }
