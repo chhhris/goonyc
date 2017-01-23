@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   resources :trips, except: [:show, :index, :about, :oj, :contact], path: ''
 
-  get '/', to: 'trips#show'
+  get '/', to: 'trips#show', as: 'show'
   get 'contact', to: 'trips#contact'
   get '/oj', to: 'trips#oj'
   get '/trips', to: 'trips#index'

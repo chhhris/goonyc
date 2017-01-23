@@ -20,7 +20,7 @@ class TripsController < ApplicationController
       prev_trip.update_column(:featured, false)
     end
 
-    redirect_to oj_path
+    redirect_to show_path(@trip.id)
   end
 
   def refresh
