@@ -12,17 +12,15 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <style>
       .background-image {
-        /*background-image:  url('assets/pos.jpg');*/
-        /*background-size: cover;*/
-         /*background-size: contain;
-        background-repeat:   no-repeat;*/
-        /*background-position: center center;*/
+        background-image: url("https://s3-us-west-1.amazonaws.com/housechief-assets/<%= @trip.code.downcase %>.jpg");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment:fixed;
 
-        background: image-url(<%= "assets/@trip.code.downcase" %>) no-repeat center center fixed;
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          background-size: cover;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
       }
     </style>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>

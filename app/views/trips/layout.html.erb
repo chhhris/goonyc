@@ -9,7 +9,8 @@
   <meta name="theme-color" content="#ffffff">
   <style>
     .background-image {
-      background-image: image-url("<%= @trip ? "#{@trip.code.downcase}.jpg" : '' %>");
+      background-image: url(<%= "https://s3-us-west-1.amazonaws.com/housechief-assets/#{@trip.code.downcase || 'cun'}.jpg" %>);
+      /*background-image: "https://s3-us-west-1.amazonaws.com/housechief-assets/#{@trip.code.downcase || 'cun'}.jpg" %>;*/
       background-size: cover;
     }
   </style>
