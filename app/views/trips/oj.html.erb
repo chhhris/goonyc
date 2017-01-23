@@ -1,57 +1,13 @@
-<style type="text/css">
-  .row {
-    padding-top: 10px;
-  }
-  .body {
-    padding-left: 20px;
-    padding-top: 5px;
-    font-family: monospace;
-  }
-  .refresh {
-    margin-bottom: 20px;
-  }
-  .flightsTable {
-    border-collapse: collapse;
-    color: #000;
-    font-size: 18px;
-    text-align: left;
-    width: 1000px;
-  }
-  .flightsTable th {
-    background-color: #BDB76B;
-    color: white;
-  }
-  .trueRow {
-    background-color: #FFFFE0;
-  }
-  .falseRow {
-    background-color: #FFF;
-  }
-  .featuredRow {
-    background-color: #10c4b5;
-  }
-  .flightsTable td, .flightsTable th {
-    padding: 10px;
-    border: 0;
-  }
-  .flightsTable td {
-    border-bottom: 1px dotted #BDB76B;
-  }
-</style>
-
-<%
-    @destinations = {
-      stt: 'Saint Thomas',
-      cun: 'Tulum',
-      pos: 'Port of Spain'
-    }
-%>
-
 <div class="body">
-  <h1>Flights Dashboard</h1>
+  <h1>Flights Dashboard</h1><span>
 
   <div class="refresh">
-    <button>Refresh flights</button><span> | <a href="/">see home page >></a></span>
+    <form action="/refresh" accept-charset="UTF-8" method="post">
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <div class="actions">
+        <button type="submit">Refresh flights</button>
+      </div>
+    </form>
   </div>
 
   <table class="flightsTable">
@@ -67,6 +23,7 @@
           departure_date = "#{trip.depart_at.strftime('%B').downcase} #{trip.depart_at.strftime('%e').downcase}"
           return_date = trip.return_at.strftime('%e')
           return_date.prepend("#{trip.return_at.strftime('%B').downcase} ") if trip.return_at.strftime('%B') != trip.depart_at.strftime('%B')
+          # TODO
           # return_date = format_return(trip.return_at)
       %>
       <tr class="<%= trip.featured? ? 'featuredRow' : "#{index.odd?}Row" %>">
@@ -74,11 +31,9 @@
           <% if trip.featured? %>
             <b>Featured</b>
           <% else %>
-            <%# form_for(trip, params: :patch) do |f| %>
             <form action="/select" accept-charset="UTF-8" method="post">
               <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
               <input type="hidden" name="trip_id" value="<%= trip.id %>">
-            <%# form_for(trip, method: :put) do |f| %>
               <div class="actions">
                 <button type="submit">Select</button>
               </div>
