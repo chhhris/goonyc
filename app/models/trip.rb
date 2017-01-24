@@ -69,9 +69,9 @@ class Trip < ApplicationRecord
         # link to book it
         booking_link = cheapest_flight['PricingOptions'].first['DeeplinkUrl']
 
-        trip = Trip.new(name: DESTINATION_NAME_MAPPING[code.to_sym], code: code, depart_at: depart_at, return_at: return_at,
-            price: flight_cost, url: booking_link, featured: false)
-
+        trip = Trip.where(code: code, name: DESTINATION_NAME_MAPPING[code.to_sym], depart_at: depart_at, return_at: return_at).first_or_initialize
+        trip.price = flight_cost
+        trip.url = booking_link
         trip.save
       end
     end
