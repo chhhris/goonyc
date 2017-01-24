@@ -19,13 +19,6 @@
       <th style="width: 15%;">URL</th>
     </tr>
     <% @trips.each_with_index do |trip, index| %>
-      <%
-          departure_date = "#{trip.depart_at.strftime('%B').downcase} #{trip.depart_at.strftime('%e').downcase}"
-          return_date = trip.return_at.strftime('%e')
-          return_date.prepend("#{trip.return_at.strftime('%B').downcase} ") if trip.return_at.strftime('%B') != trip.depart_at.strftime('%B')
-          # TODO
-          # return_date = format_return(trip.return_at)
-      %>
       <tr class="<%= trip.featured? ? 'featuredRow' : "#{index.odd?}Row" %>">
         <td>
           <% if trip.featured? %>
@@ -42,56 +35,9 @@
         </td>
         <td><%= trip.name %></td>
         <td><%= "$#{sprintf("%.0f", trip.price)}" %></td>
-        <td><%= departure_date %>-<%= return_date %></td>
+        <td><%= format_date(depart_at: trip.depart_at, return_at: trip.return_at) %></td>
         <td><a href="<%= trip.url %>" target="_blank">Link</a></td>
       </tr>
     <% end %>
   </table>
 </div>
-
-<!--
-
-  # View
-
-  [[ refresh data ]]
-
-t = Trip.new(destination_code: 'CUN', departure: 15.days.from_now, return: 18.days.from_now, price: '420.27', url: 'http://example.com', featured: false)
-
-  Destination    Code            Departure       Return          Price     Selected
-  ===========    =============   =============   =============   =======   =========
-  Bahamas        STT             Nov 4           Nov 4           $260      true
-  Turks          POS             Oct 14          Oct 14          $325      false
-  St. Thomas     CUN             Nov 10          Nov 10          $410      false
-
-
-    #destination
-    def lowest_price
-      self.prices.order(price DESC).first
-    end
-
-  # Destinations Table
-  ## has_many prices
-
-  id  destination   bg_img    sm_img    selected
-
-
-  # Prices Table
-  ## belongs_to destination
-
-  depart  return  destination_id  price
-
-
-
-  # 6 weeks x iterations
-    Thurs - Sun,
-    Fri - Mon
-
-  trips = [
-    { depart: '', return: '' },
-    { depart: '', return: '' },
-    { depart: '', return: '' },
-    { depart: '', return: '' },
-    { depart: '', return: '' },
-    { depart: '', return: '' }
-  ]
- -->
