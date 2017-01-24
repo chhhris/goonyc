@@ -1,14 +1,13 @@
-<!-- <link rel="stylesheet" href="app.css" type="text/css" /> -->
-<p id="notice"><%= notice %></p>
 <%
     @price = "$#{sprintf("%.0f", @trip.price)}"
-    @departure_date = "#{@trip.depart_at.strftime('%B').downcase} #{@trip.depart_at.strftime('%e').downcase}"
-    @return_date = @trip.return_at.strftime('%e')
-    @return_date.prepend("#{@trip.return_at.strftime('%B').downcase} ") if @trip.return_at.strftime('%B') != @trip.depart_at.strftime('%B')
+    @dates = format_date(depart_at: @trip.depart_at, return_at: @trip.return_at)
 %>
+
+<p id="notice"><%= notice %></p>
+
 <div class="container">
   <div class="<%= @trip.code.downcase %>-details">
-    <%= render partial: "trips/destinations/pos" %>
+    <%= render partial: "trips/destinations/#{@trip.code.downcase}" %>
   </div>
 </div>
 

@@ -1,20 +1,18 @@
 <a href="<%= @trip.url %>" target="_blank">
   <div>
     <span>
-      <%= @destination.downcase %>
+      <%= @trip.name.downcase %>
     </span>
   </div>
   <div style="margin-top: 5px;">
-    <span>
-      <%= "84&deg;F" %>
-    </span>
+    <span>84&deg;F</span>
   </div>
   <div style="margin-top: 5px;">
     <span>
       <%= @price %>
     </span>
     <span>
-      <%= @departure_date %>-<%= @return_date %>
+      <%= @dates %>
     </span>
   </div>
 </a>

@@ -2,6 +2,8 @@ class Trip < ApplicationRecord
 
   class << self
 
+    API_KEY = ENV['SKY_SCANNER_API']
+
     DESTINATION_NAME_MAPPING = {
       STT: 'Saint Thomas',
       CUN: 'Tulum',
@@ -13,7 +15,7 @@ class Trip < ApplicationRecord
       currency: 'USD',
       locale: 'en-US',
       locationSchema: 'iata',
-      apikey: ENV['SKY_SCANNER_API'],
+      apikey: API_KEY,
       originplace: 'JFK-sky',
       adults: 1,
       children: 0,

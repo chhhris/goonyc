@@ -1,4 +1,5 @@
 class TripsController < ApplicationController
+  before_filter :http_basic_auth, only: :oj
   before_action :set_trip, only: [:show, :edit, :update, :destroy]
 
   def oj

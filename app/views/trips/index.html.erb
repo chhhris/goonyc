@@ -6,15 +6,13 @@
 <%
     featured_trip_code = @trip.code.downcase
     @price = "$#{sprintf("%.0f", @trip.price)}"
-    @departure_date = "#{@trip.departure.strftime('%B').downcase} #{@trip.departure.strftime('%e').downcase}"
-    @return_date = @trip.return.strftime('%e')
-    @return_date.prepend("#{@trip.return.strftime('%B').downcase} ") if @trip.return.strftime('%B') != @trip.departure.strftime('%B')
+    @dates = format_date(depart_at: @trip.depart_at, return_at: @trip.return_at)
 %>
 <div class="container">
   <div class="<%= featured_trip_code %>-details">
-    <%= erb :"destinations/_#{featured_trip_code}" %>
+    <%= render partial: "destinations/#{featured_trip_code}" %>
   </div>
 </div>
 
-<%= erb :_footer %>
+<%= render partial: 'footer' %>
 <% end %>
