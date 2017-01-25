@@ -22,22 +22,24 @@
   width: 1000px;
 }
 .flightsTable th {
-  background-color: #BDB76B;
+  background-color: #000;
   color: white;
 }
 .trueRow {
-  background-color: #FFFFE0;
+  background-color: #f2f7f2;
 }
 .falseRow {
   background-color: #FFF;
 }
 .featuredRow {
-  background-color: #10c4b5;
+  font-weight: bold;
+  background-color: #f7dcd7;
+  line-height: 35px;
 }
 .flightsTable td, .flightsTable th {
   padding: 10px;
   border: 0;
 }
 .flightsTable td {
-  border-bottom: 1px dotted #BDB76B;
+  border-bottom: 1px dotted #000;
 }
