@@ -14,3 +14,11 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+$( document ).ready(function() {
+  $('button.js-refresh-btn').click(function() {
+    alert( 'Click OK, then give it about 15 seconds. \n\nIf nothing happens, click "Refresh flights" again. \n\nIf still nothing happens, tweet at @chhhris' );
+  });
+});
+
