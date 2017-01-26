@@ -24,7 +24,7 @@ class Trip < ApplicationRecord
     }
 
     def generate_flights
-      first_date = Date.parse('Friday') + 14.days
+      first_date = Date.parse('Thursday') + 14.days
 
       # TODO clean up date formatting
       departure_dates = [ first_date, first_date + 14.days, first_date + 28.days ]
