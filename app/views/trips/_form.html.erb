@@ -1,3 +1,28 @@
+<style>
+
+  form {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    font-weight: bold;
+  }
+
+  .url-field textarea {
+    width: 75%;
+    height: 75px;
+    margin-top: 5px;
+  }
+
+  .form-field {
+    margin-bottom: 5px;
+  }
+
+  .form-field input {
+    height: 20px;
+    margin-top: 5px;
+    width: 200px;
+  }
+</style>
+
 <%= form_for(trip) do |f| %>
   <% if trip.errors.any? %>
     <div id="error_explanation">
@@ -11,39 +36,34 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-field">
     <%= f.label :code %>
     <%= f.text_field :code %>
   </div>
 
-  <div class="field">
+  <div class="field form-field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
-  <div class="field">
+  <div class="field form-field">
     <%= f.label :price %>
     <%= f.text_field :price %>
   </div>
 
-  <div class="field">
+  <div class="field form-field">
     <%= f.label :depart_at %>
-    <%= f.datetime_select :depart_at %>
+    <%= f.date_select :depart_at %>
   </div>
 
-  <div class="field">
+  <div class="field form-field">
     <%= f.label :return_at %>
-    <%= f.datetime_select :return_at %>
+    <%= f.date_select :return_at %>
   </div>
 
-  <div class="field">
+  <div class="field url-field">
     <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
-
-  <div class="field">
-    <%= f.label :featured %>
-    <%= f.check_box :featured %>
+    <%= f.text_area :url %>
   </div>
 
   <div class="actions">

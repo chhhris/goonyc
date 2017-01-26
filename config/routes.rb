@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   get '/about', to: 'trips#about'
   post '/refresh', to: 'trips#refresh'
   post '/select', to: 'trips#select'
+  # post '/:id', to: 'trips#update'
 end

@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   before_filter :http_basic_auth, only: :oj
-  before_action :set_trip, only: [:show, :edit, :update, :destroy]
+  before_action :set_trip, only: [:show, :edit, :destroy]
 
   def oj
     # lock this down with Basic Authentication in routes.rb
@@ -101,11 +101,9 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     respond_to do |format|
       if @trip.update(trip_params)
-        format.html { redirect_to @trip, notice: 'Trip was successfully updated.' }
-        format.json { render :show, status: :ok, location: @trip }
+        format.html { redirect_to oj_path, notice: 'Trip was successfully updated.' }
       else
         format.html { render :edit }
-        format.json { render json: @trip.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -128,7 +126,7 @@ class TripsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def trip_params
-      params.permit(:code, :name, :price, :depart_at, :return_at, :url, :featured)
+      params.require(:trip).permit(:code, :name, :price, :depart_at, :return_at, :url)
     end
 
     def load_trips
