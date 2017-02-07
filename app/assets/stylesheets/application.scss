@@ -26,38 +26,60 @@ a, a:link, a:visited, a:hover {
   position: relative;
   min-height: 100%;
   font-family: monospace;
-  letter-spacing: 2.5px;
-  font-size: 350%;
+  font-size: 3.5em;
   font-weight: 100;
 }
 
-@media screen and (max-width: 950px) {
-  background-color: rgba(255, 255, 225, 0.4);
-  padding: 2px;
+@media screen and (max-width: 700px) {
+  .container {
+    letter-spacing: 1.5px;
+  }
+  .pos-details, .cun-details, .stt-details {
+    font-size: 0.5em;
+  }
+  .line {
+    margin-top: 0.2em;
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+  .footer {
+    font-family: monospace;
+    letter-spacing: 1.25px;
+    font-size: 1.8em;
+    font-weight: 100;
+  }
+  .footer-el {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
 }
 
-.cun-details {
-  float: right;
-  padding-right: 15%;
-  padding-top: 35%;
-}
-.stt-details {
-  float: right;
-  padding-right: 15%;
-  padding-top: 20%;
-}
-.pos-details {
-  top: 590px;
-  right: 100px;
-  position: absolute;
-  font-size: 90%;
-}
+@media screen and (min-width: 701px) {
+  .container {
+    letter-spacing: 2.5px;
+  }
 
-.footer {
-  font-family: monospace;
-  letter-spacing: 1.25px;
-  font-size: 250%;
-  font-weight: 100;
+  .cun-details {
+    float: right;
+    padding-right: 15%;
+    padding-top: 35%;
+  }
+  .stt-details {
+    float: right;
+    padding-right: 15%;
+    padding-top: 20%;
+  }
+  .pos-details {
+    top: 590px;
+    right: 100px;
+    position: absolute;
+    font-size: 0.9em;
+  }
+
+  .footer {
+    font-family: monospace;
+    letter-spacing: 1.25px;
+    font-size: 250%;
+    font-weight: 100;
+  }
 }
 
 .stt-footer {

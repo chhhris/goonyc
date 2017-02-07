@@ -122,13 +122,13 @@ label {
 
 /* line 24, /getoutofnyc-rails/app/assets/stylesheets/trips.scss */
 .flightsTable th {
-  background-color: #BDB76B;
+  background-color: #000;
   color: white;
 }
 
 /* line 28, /getoutofnyc-rails/app/assets/stylesheets/trips.scss */
 .trueRow {
-  background-color: #FFFFE0;
+  background-color: #f2f7f2;
 }
 
 /* line 31, /getoutofnyc-rails/app/assets/stylesheets/trips.scss */
@@ -138,18 +138,20 @@ label {
 
 /* line 34, /getoutofnyc-rails/app/assets/stylesheets/trips.scss */
 .featuredRow {
-  background-color: #10c4b5;
+  font-weight: bold;
+  background-color: #f7dcd7;
+  line-height: 35px;
 }
 
-/* line 37, /getoutofnyc-rails/app/assets/stylesheets/trips.scss */
+/* line 39, /getoutofnyc-rails/app/assets/stylesheets/trips.scss */
 .flightsTable td, .flightsTable th {
   padding: 10px;
   border: 0;
 }
 
-/* line 41, /getoutofnyc-rails/app/assets/stylesheets/trips.scss */
+/* line 43, /getoutofnyc-rails/app/assets/stylesheets/trips.scss */
 .flightsTable td {
-  border-bottom: 1px dotted #BDB76B;
+  border-bottom: 1px dotted #000;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
@@ -184,33 +186,38 @@ a, a:link, a:visited, a:hover {
   font-weight: 100;
 }
 
-@media screen and (max-width: 950px) {
-  background-color: rgba(255, 255, 225, 0.4);
-  padding: 2px;
+@media screen and (max-width: 600px) {
+  /* line 36, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
+  .cun-details .stt-details .pos-details {
+    background-color: rgba(255, 255, 225, 0.4);
+    padding: 20px;
+    font-size: 1.7em;
+  }
 }
-/* line 40, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
-.cun-details {
-  float: right;
-  padding-right: 15%;
-  padding-top: 35%;
-}
+@media screen and (min-width: 600px) {
+  /* line 44, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
+  .cun-details {
+    float: right;
+    padding-right: 15%;
+    padding-top: 35%;
+  }
 
-/* line 45, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
-.stt-details {
-  float: right;
-  padding-right: 15%;
-  padding-top: 20%;
-}
+  /* line 49, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
+  .stt-details {
+    float: right;
+    padding-right: 15%;
+    padding-top: 20%;
+  }
 
-/* line 50, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
-.pos-details {
-  top: 590px;
-  right: 100px;
-  position: absolute;
-  font-size: 90%;
+  /* line 54, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
+  .pos-details {
+    top: 590px;
+    right: 100px;
+    position: absolute;
+    font-size: 90%;
+  }
 }
-
-/* line 57, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
+/* line 62, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .footer {
   font-family: monospace;
   letter-spacing: 1.25px;
@@ -218,19 +225,19 @@ a, a:link, a:visited, a:hover {
   font-weight: 100;
 }
 
-/* line 64, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
+/* line 69, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .stt-footer {
   position: absolute;
   bottom: 15px;
 }
 
-/* line 69, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
+/* line 74, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .pos-footer {
   position: absolute;
   bottom: 15px;
 }
 
-/* line 74, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
+/* line 79, /getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .cun-footer {
   right: 200;
 }

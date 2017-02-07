@@ -12192,4 +12192,11 @@ var o,i,s,a,u;return i=null!=n?n:{},a=i.restorationIdentifier,s=i.restorationDat
 
 
 
-;
+
+
+$( document ).ready(function() {
+  $('button.js-refresh-btn').click(function() {
+    alert( 'Click OK, then give it about 15 seconds. \n\nIf nothing happens, click "Refresh flights" again. \n\nIf still nothing happens, tweet at @chhhris' );
+  });
+});
+
