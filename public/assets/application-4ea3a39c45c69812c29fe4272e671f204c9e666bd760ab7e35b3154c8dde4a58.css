@@ -265,5 +265,6 @@ a, a:link, a:visited, a:hover {
 
 /* line 96, /Users/clake/Sites/getoutofnyc-rails/app/assets/stylesheets/application.scss */
 .cun-footer {
-  right: 200;
+  position: absolute;
+  bottom: 15px;
 }
