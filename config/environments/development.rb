@@ -26,9 +26,9 @@ Rails.application.configure do
     config.cache_store = :null_store
   end
 
-  config.action_controller.asset_host = ENV['ASSET_HOST']
-  config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
-  config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
+  # config.action_controller.asset_host = ENV['ASSET_HOST']
+  # config.aws_access_key_id = ENV['AWS_ACCESS_KEY_ID']
+  # config.aws_secret_access_key = ENV['AWS_SECRET_ACCESS_KEY']
 
   # config.public_file_server.enabled = true
 

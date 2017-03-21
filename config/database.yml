@@ -4,8 +4,8 @@ development: &default
   database: getoutofnyc-rails_development
   pool: 5
   username: postgres
-  password: <%= ENV['GETOUTOFNYC-RAILS_DATABASE_PASSWORD'] %>
-  host: db
+  password: <%= ENV['GETOUTOFNYC_RAILS_DATABASE_PASSWORD'] %>
+  # host: db
 
 test:
   <<: *default
@@ -17,5 +17,5 @@ production:
   encoding: unicode
   database: getoutofnyc
   username: getoutofnyc
-  password: <%= ENV['GETOUTOFNYC-RAILS_DATABASE_PASSWORD'] %>
+  password: <%= ENV['GETOUTOFNYC_RAILS_DATABASE_PASSWORD'] %>
   port: 5432
