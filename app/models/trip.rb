@@ -4,7 +4,7 @@ class Trip < ApplicationRecord
   WEATHER_API_KEY = ENV['WEATHER_API']
 
   DESTINATION_NAME_MAPPING = {
-    STT: { name: 'Saint Thomas', weather_lookup: 'STT' }
+    STT: { name: 'Saint Thomas', weather_lookup: 'STT' },
     CUN: { name: 'Tulum', weather_lookup: 'QR/Cancun_International' },
     POS: { name: 'Port of Spain', weather_lookup: 'TD/Piarco_sInternational' }
   }
@@ -22,23 +22,23 @@ class Trip < ApplicationRecord
     cabinclass: 'Economy'
   }
 
-  after_save :update_temperature
+  # after_save :update_temperature
 
-  def update_temperature
-    p_depart = self.depart_at.strftime('%m%d')
-    p_return = self.return_at.strftime('%m%d')
-    destination = DESTINATION_NAME_MAPPING[self.code.to_sym]['weather_lookup']
+  # def update_temperature
+  #   p_depart = self.depart_at.strftime('%m%d')
+  #   p_return = self.return_at.strftime('%m%d')
+  #   destination = DESTINATION_NAME_MAPPING[self.code.to_sym]['weather_lookup']
 
-    url = "http://api.wunderground.com/api/#{WEATHER_API_KEY}/planner_#{p_depart}#{p_return}/q/#{destination}.json"
+  #   url = "http://api.wunderground.com/api/#{WEATHER_API_KEY}/planner_#{p_depart}#{p_return}/q/#{destination}.json"
 
-    avg_high = open(url) do |resp| 
-      parsed_json = JSON.parse(resp.read) 
-      parsed_json['trip']['temp_high']['avg']['F']
-    end
+  #   avg_high = open(url) do |resp|
+  #     parsed_json = JSON.parse(resp.read)
+  #     parsed_json['trip']['temp_high']['avg']['F']
+  #   end
 
-    self.temperature = avg_high
-    self.save
-  end
+  #   self.temperature = avg_high
+  #   self.save
+  # end
 
   class << self
 
@@ -59,11 +59,10 @@ class Trip < ApplicationRecord
     end
 
     def search_api(code, depart_at, return_at)
-      params = PARAMS.merge( destinationplace: code, outbounddate: depart_at,
-          inbounddate: return_at)
+      params = PARAMS.merge( destinationplace: code, outbounddate: depart_at, inbounddate: return_at)
 
       post_url = "http://business.skyscanner.net/apiservices/pricing/v1.0/?apikey=#{FLIGHT_API_KEY}"
-      
+
       RestClient.post(post_url, params, { Accept: 'application/json' }) do |response, request, result, &block|
         if response.code == 201
           polling_url = response.headers[:location]
@@ -76,7 +75,7 @@ class Trip < ApplicationRecord
       RestClient.get("#{polling_url}?apiKey=#{FLIGHT_API_KEY}", { accept: :json }) do |response, request, result, &block|
         return unless response.code == 200
 
-        destination = DESTINATION_NAME_MAPPING[code.to_sym]['name']
+        destination = DESTINATION_NAME_MAPPING[code.to_sym][:name]
         cheapest_flight = JSON.parse(response)['Itineraries'].first
         flight_price = cheapest_flight['PricingOptions'].first['Price']
         booking_link = cheapest_flight['PricingOptions'].first['DeeplinkUrl']
@@ -85,6 +84,13 @@ class Trip < ApplicationRecord
         trip.price = flight_price
         trip.url = booking_link
         trip.save
+      end
+    end
+
+    def remove_old_trips
+      trips = Trip.where('depart_at < ?', 1.week_from_now)
+      if trips.present?
+        trips.destroy_all
       end
     end
 

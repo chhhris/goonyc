@@ -1,10 +1,9 @@
 class TripsController < ApplicationController
   before_filter :http_basic_auth, only: :oj
   before_action :set_trip, only: [:show, :edit, :destroy]
+  after_action :remove_old_trips, only: :refresh
 
   def oj
-    # lock this down with Basic Authentication in routes.rb
-
     load_trips
 
     respond_to do |format|
@@ -135,5 +134,9 @@ class TripsController < ApplicationController
       end
 
       @trips = Trip.all.order(price: :asc)
+    end
+
+    def clean_up
+      Trip.remove_old_trips
     end
 end
