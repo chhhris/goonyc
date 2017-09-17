@@ -24,9 +24,13 @@ class TripsController < ApplicationController
   end
 
   def refresh
-    Trip.generate_flights
+    begin
+      Trip.generate_flights
 
-    redirect_to :oj
+      redirect_to :oj
+    rescue => e
+      redirect_to :oj, alert: "Error connecting to Skyscanner API.\nPlease try again."
+    end
   end
 
   def about
