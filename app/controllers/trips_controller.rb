@@ -136,7 +136,7 @@ class TripsController < ApplicationController
       @trips = Trip.all.order(price: :asc)
     end
 
-    def clean_up
+    def remove_old_trips
       Trip.remove_old_trips
     end
 end

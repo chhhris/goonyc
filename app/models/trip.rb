@@ -77,18 +77,20 @@ class Trip < ApplicationRecord
 
         destination = DESTINATION_NAME_MAPPING[code.to_sym][:name]
         cheapest_flight = JSON.parse(response)['Itineraries'].first
-        flight_price = cheapest_flight['PricingOptions'].first['Price']
-        booking_link = cheapest_flight['PricingOptions'].first['DeeplinkUrl']
+        if cheapest_flight.present?
+          flight_price = cheapest_flight['PricingOptions'].first['Price']
+          booking_link = cheapest_flight['PricingOptions'].first['DeeplinkUrl']
 
-        trip = Trip.where(code: code, name: destination, depart_at: depart_at, return_at: return_at).first_or_initialize
-        trip.price = flight_price
-        trip.url = booking_link
-        trip.save
+          trip = Trip.where(code: code, name: destination, depart_at: depart_at, return_at: return_at).first_or_initialize
+          trip.price = flight_price
+          trip.url = booking_link
+          trip.save
+        end
       end
     end
 
     def remove_old_trips
-      trips = Trip.where('depart_at < ?', 1.week_from_now)
+      trips = Trip.where('depart_at < ?', 1.week.from_now)
       if trips.present?
         trips.destroy_all
       end
