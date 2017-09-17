@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   post '/refresh', to: 'trips#refresh'
   post '/select', to: 'trips#select'
   # post '/:id', to: 'trips#update'
+  get '*url', to: 'trips#show'
 end
