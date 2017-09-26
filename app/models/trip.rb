@@ -33,7 +33,9 @@ class Trip < ApplicationRecord
 
     avg_high = open(url) do |resp|
       parsed_json = JSON.parse(resp.read)
-      parsed_json['trip']['temp_high']['avg']['F']
+      if parsed_json['trip'].present?
+        parsed_json['trip']['temp_high']['avg']['F']
+      end
     end
 
     if avg_high.present?
