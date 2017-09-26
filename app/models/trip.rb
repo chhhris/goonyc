@@ -28,7 +28,6 @@ class Trip < ApplicationRecord
     p_depart = self.depart_at.strftime('%m%d')
     p_return = self.return_at.strftime('%m%d')
     destination = DESTINATION_NAME_MAPPING[self.code.to_sym][:weather_lookup]
-
     url = "http://api.wunderground.com/api/#{WEATHER_API_KEY}/planner_#{p_depart}#{p_return}/q/#{destination}.json"
 
     avg_high = open(url) do |resp|
