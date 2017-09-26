@@ -2,6 +2,7 @@ class TripsController < ApplicationController
   before_filter :http_basic_auth, only: :oj
   before_action :set_trip, only: [:show, :edit, :destroy]
   after_action :remove_old_trips, only: :refresh
+  after_action :add_temp, only: :refresh
 
   def oj
     load_trips

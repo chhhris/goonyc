@@ -6,7 +6,7 @@ class Trip < ApplicationRecord
   DESTINATION_NAME_MAPPING = {
     STT: { name: 'Saint Thomas', weather_lookup: 'STT' },
     CUN: { name: 'Tulum', weather_lookup: 'QR/Cancun_International' },
-    POS: { name: 'Port of Spain', weather_lookup: 'TD/Piarco_sInternational' }
+    POS: { name: 'Port of Spain', weather_lookup: 'TT/Piarco' }
   }
 
   PARAMS = {
@@ -22,23 +22,24 @@ class Trip < ApplicationRecord
     cabinclass: 'Economy'
   }
 
-  # after_save :update_temperature
+  after_save :update_temperature
 
-  # def update_temperature
-  #   p_depart = self.depart_at.strftime('%m%d')
-  #   p_return = self.return_at.strftime('%m%d')
-  #   destination = DESTINATION_NAME_MAPPING[self.code.to_sym]['weather_lookup']
+  def update_temperature
+    p_depart = self.depart_at.strftime('%m%d')
+    p_return = self.return_at.strftime('%m%d')
+    destination = DESTINATION_NAME_MAPPING[self.code.to_sym][:weather_lookup]
 
-  #   url = "http://api.wunderground.com/api/#{WEATHER_API_KEY}/planner_#{p_depart}#{p_return}/q/#{destination}.json"
+    url = "http://api.wunderground.com/api/#{WEATHER_API_KEY}/planner_#{p_depart}#{p_return}/q/#{destination}.json"
 
-  #   avg_high = open(url) do |resp|
-  #     parsed_json = JSON.parse(resp.read)
-  #     parsed_json['trip']['temp_high']['avg']['F']
-  #   end
+    avg_high = open(url) do |resp|
+      parsed_json = JSON.parse(resp.read)
+      parsed_json['trip']['temp_high']['avg']['F']
+    end
 
-  #   self.temperature = avg_high
-  #   self.save
-  # end
+    if avg_high.present?
+      self.update_column(:temperature, avg_high.to_i)
+    end
+  end
 
   class << self
 
@@ -81,7 +82,7 @@ class Trip < ApplicationRecord
           flight_price = cheapest_flight['PricingOptions'].first['Price']
           booking_link = cheapest_flight['PricingOptions'].first['DeeplinkUrl']
 
-          trip = Trip.where(code: code, name: destination, depart_at: depart_at, return_at: return_at).first_or_initialize
+          trip = Trip.where(code: code, depart_at: depart_at.to_date, return_at: return_at.to_date).first_or_initialize
           trip.price = flight_price
           trip.url = booking_link
           trip.save
