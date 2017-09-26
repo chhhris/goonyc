@@ -30,8 +30,8 @@ class Trip < ApplicationRecord
     destination = DESTINATION_NAME_MAPPING[self.code.to_sym][:weather_lookup]
     url = "http://api.wunderground.com/api/#{WEATHER_API_KEY}/planner_#{p_depart}#{p_return}/q/#{destination}.json"
 
-    avg_high = open(url) do |resp|
-      parsed_json = JSON.parse(resp.read)
+    avg_high = RestClient.get(url) do |resp|
+      parsed_json = JSON.parse(resp)
       if parsed_json['trip'].present?
         parsed_json['trip']['temp_high']['avg']['F']
       end
