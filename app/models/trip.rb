@@ -1,13 +1,8 @@
 class Trip < ApplicationRecord
+  include TripDestinations
 
   FLIGHT_API_KEY = ENV['SKY_SCANNER_API']
   WEATHER_API_KEY = ENV['WEATHER_API']
-
-  DESTINATION_NAME_MAPPING = {
-    STT: { name: 'Saint Thomas', weather_lookup: 'STT' },
-    CUN: { name: 'Tulum', weather_lookup: 'QR/Cancun_International' },
-    POS: { name: 'Port of Spain', weather_lookup: 'TT/Piarco' }
-  }
 
   PARAMS = {
     country: 'US',
@@ -40,9 +35,11 @@ class Trip < ApplicationRecord
     if avg_high.present?
       self.update_column(:temperature, avg_high.to_i)
     end
+
   end
 
   class << self
+    include TripDestinations
 
     def generate_flights
       first_date = Date.parse('Thursday') + 14.days
@@ -84,6 +81,7 @@ class Trip < ApplicationRecord
           booking_link = cheapest_flight['PricingOptions'].first['DeeplinkUrl']
 
           trip = Trip.where(code: code, depart_at: depart_at.to_date, return_at: return_at.to_date).first_or_initialize
+          trip.name = destination
           trip.price = flight_price
           trip.url = booking_link
           trip.save
