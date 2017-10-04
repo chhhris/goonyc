@@ -37,12 +37,12 @@ a, a:link, a:visited, a:hover {
   .container {
     letter-spacing: 1.5px;
   }
-  .pos-details, .cun-details, .stt-details {
+  .pos-details, .cun-details, .stt-details, .anu-details, .bze-details {
     font-size: 0.5em;
   }
   .line {
     margin-top: 0.2em;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
   }
   .footer {
     font-family: monospace;
@@ -51,7 +51,7 @@ a, a:link, a:visited, a:hover {
     font-weight: 100;
   }
   .footer-el {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 
@@ -84,6 +84,11 @@ a, a:link, a:visited, a:hover {
     padding-top: 35%;
     min-width: 45%;
   }
+  .bze-details {
+    float: right;
+    padding-right: 10%;
+    min-width: 45%;
+  }
 
   .footer {
     font-family: monospace;
@@ -93,17 +98,7 @@ a, a:link, a:visited, a:hover {
   }
 }
 
-.stt-footer {
-  position: absolute;
-  bottom: 15px;
-}
-
-.pos-footer {
-  position: absolute;
-  bottom: 15px;
-}
-
-.cun-footer {
+.place-footer {
   position: absolute;
   bottom: 15px;
 }
