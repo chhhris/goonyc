@@ -197,14 +197,14 @@ a, a:link, a:visited, a:hover {
   }
 
   /* line 41, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
-  .pos-details, .cun-details, .stt-details {
+  .pos-details, .cun-details, .stt-details, .anu-details, .bze-details {
     font-size: 0.5em;
   }
 
   /* line 44, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .line {
     margin-top: 0.2em;
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   /* line 48, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
@@ -217,7 +217,7 @@ a, a:link, a:visited, a:hover {
 
   /* line 54, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer-el {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 }
 @media screen and (min-width: 701px) {
@@ -250,7 +250,22 @@ a, a:link, a:visited, a:hover {
     font-size: 0.9em;
   }
 
-  /* line 83, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 82, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  .anu-details {
+    float: right;
+    padding-right: 10%;
+    padding-top: 35%;
+    min-width: 45%;
+  }
+
+  /* line 88, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  .bze-details {
+    float: right;
+    padding-right: 10%;
+    min-width: 45%;
+  }
+
+  /* line 94, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer {
     font-family: monospace;
     letter-spacing: 1.25px;
@@ -258,20 +273,8 @@ a, a:link, a:visited, a:hover {
     font-weight: 100;
   }
 }
-/* line 91, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
-.stt-footer {
-  position: absolute;
-  bottom: 15px;
-}
-
-/* line 96, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
-.pos-footer {
-  position: absolute;
-  bottom: 15px;
-}
-
-/* line 101, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
-.cun-footer {
+/* line 102, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+.place-footer {
   position: absolute;
   bottom: 15px;
 }
