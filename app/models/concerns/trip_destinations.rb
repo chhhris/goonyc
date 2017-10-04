@@ -7,7 +7,7 @@ module TripDestinations
   # API call
   # p_depart = t.depart_at.strftime('%m%d')
   # p_return = t.return_at.strftime('%m%d')
-  # destination = Trip::DESTINATION_NAME_MAPPING[:BZE][:weather_lookup]
+  # s = Trip::DESTINATION_NAME_MAPPING[:BZE][:weather_lookup]
   # http://api.wunderground.com/api/#{Trip::WEATHER_API_KEY}/planner_#{p_depart}#{p_return}/q/#{destination}.json
 
   DESTINATION_NAME_MAPPING = {

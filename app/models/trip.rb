@@ -74,14 +74,13 @@ class Trip < ApplicationRecord
       RestClient.get("#{polling_url}?apiKey=#{FLIGHT_API_KEY}", { accept: :json }) do |response, request, result, &block|
         return unless response.code == 200
 
-        destination = DESTINATION_NAME_MAPPING[code.to_sym][:name]
         cheapest_flight = JSON.parse(response)['Itineraries'].first
         if cheapest_flight.present?
           flight_price = cheapest_flight['PricingOptions'].first['Price']
           booking_link = cheapest_flight['PricingOptions'].first['DeeplinkUrl']
 
           trip = Trip.where(code: code, depart_at: depart_at.to_date, return_at: return_at.to_date).first_or_initialize
-          trip.name = destination
+          trip.name = DESTINATION_NAME_MAPPING[code.to_sym][:name]
           trip.price = flight_price
           trip.url = booking_link
           trip.save
