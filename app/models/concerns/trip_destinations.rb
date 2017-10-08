@@ -12,6 +12,7 @@ module TripDestinations
 
   DESTINATION_NAME_MAPPING = {
     ANU: { name: 'Antigua', weather_lookup: 'AT' },
+    BGI: { name: 'Barbados', weather_lookup: 'BGI' },
     BZE: { name: 'Belize', weather_lookup: 'BZE' },
     CUN: { name: 'Tulum', weather_lookup: 'QR/Cancun_International' },
     STT: { name: 'Saint Thomas', weather_lookup: 'STT' },
