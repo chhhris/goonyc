@@ -1,0 +1,9 @@
+<a href="<%= @trip.url %>" target="_blank">
+  <div class="line">
+    <%= @trip.name.downcase %><span>&nbsp;<%= @trip.temperature %>&deg;F</span>
+  </div>
+  <div  class="line">
+    <%= @price %>
+    <%= @dates %>
+  </div>
+</a>

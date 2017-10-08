@@ -15,7 +15,9 @@ module TripDestinations
     BGI: { name: 'Barbados', weather_lookup: 'BGI' },
     BZE: { name: 'Belize', weather_lookup: 'BZE' },
     CUN: { name: 'Tulum', weather_lookup: 'QR/Cancun_International' },
+    MGA: { name: 'Nicaragua', weather_lookup: 'NI/Bluefields' },
     STT: { name: 'Saint Thomas', weather_lookup: 'STT' },
-    POS: { name: 'Port of Spain', weather_lookup: 'TT/Piarco' }
+    POS: { name: 'Port of Spain', weather_lookup: 'TT/Piarco' },
+    PTP: { name: 'Guadalupe', weather_lookup: 'PTP' }
   }
 end
