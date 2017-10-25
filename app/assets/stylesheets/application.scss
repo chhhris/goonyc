@@ -36,6 +36,11 @@ a, a:link, a:visited, a:hover {
 @media screen and (max-width: 700px) {
   .container {
     letter-spacing: 1.5px;
+    font-size: 2.5em;
+  }
+  .about {
+    margin: 50px;
+    font-size: large;
   }
   .pos-details, .cun-details, .stt-details, .anu-details, .bze-details {
     font-size: 0.5em;
@@ -45,9 +50,9 @@ a, a:link, a:visited, a:hover {
     background-color: rgba(255, 255, 255, 0.1);
   }
   .footer {
-    font-family: monospace;
+    font-family: Helvetica, Arial, Sans-Serif;
     letter-spacing: 1.25px;
-    font-size: 1.8em;
+    font-size: 150%;
     font-weight: 100;
   }
   .footer-el {
@@ -59,7 +64,10 @@ a, a:link, a:visited, a:hover {
   .container {
     letter-spacing: 2.5px;
   }
-
+  .about {
+    margin: 75px;
+    font-size: xx-large;
+  }
   .cun-details {
     float: right;
     padding-right: 10%;
