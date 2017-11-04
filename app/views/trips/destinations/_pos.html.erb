@@ -1,15 +1,13 @@
 <a href="<%= @trip.url %>" target="_blank">
   <div class="line">
-    <%= @trip.name %><span>&nbsp;<%= @trip.temperature %>&deg;F</span>
+    <span><%= @trip.name.downcase %>&nbsp;<%= @trip.temperature %>&deg;F</span>
   </div>
   <div class="line" style="letter-spacing: 1px;">
-    trinidad and tobago
+    <span>trinidad and tobago</span>
   </div>
   <div class="line">
     <span>
       <%= @price %>
-    </span>
-    <span>
       <%= @dates %>
     </span>
   </div>

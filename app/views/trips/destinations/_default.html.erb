@@ -1,16 +1,8 @@
-<style>
-  a, a:link, a:visited, a:hover {
-    text-decoration: none;
-    color: white !important;
-  }
-</style>
-
 <a href="<%= @trip.url %>" target="_blank">
   <div class="line">
-    <%= @trip.name.downcase %><span>&nbsp;<%= @trip.temperature %>&deg;F</span>
+    <span><%= @trip.name.downcase %>&nbsp;<%= @trip.temperature %>&deg;F</span>
   </div>
   <div  class="line">
-    <%= @price %>
-    <%= @dates %>
+    <span><%= @price %>&nbsp;<%= @dates %></span>
   </div>
 </a>
