@@ -132,8 +132,7 @@ class TripsController < ApplicationController
       if Trip.where(featured: true).blank?
         Trip.last.update_column(:featured, true)
       end
-
-      @trips = Trip.all.order(price: :asc)
+      @trips = Trip.admin_trips_display
     end
 
     def remove_old_trips

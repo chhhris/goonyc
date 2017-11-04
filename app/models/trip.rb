@@ -41,6 +41,19 @@ class Trip < ApplicationRecord
   class << self
     include TripDestinations
 
+    def admin_trips_display
+      display_trips = []
+      trips = Trip.all.order({name: :asc}, {price: :asc})
+
+      trips.each do |trip|
+        unless display_trips.last && display_trips.last.name == trip.name
+          display_trips << trip
+        end
+      end
+
+      display_trips
+    end
+
     def generate_flights
       first_date = Date.parse('Thursday') + 14.days
 
