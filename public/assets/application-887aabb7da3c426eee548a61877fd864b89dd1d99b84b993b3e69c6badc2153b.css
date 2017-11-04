@@ -177,11 +177,10 @@ div#bg {
 /* line 23, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
 a, a:link, a:visited, a:hover {
   text-decoration: none;
-  color: #4f4f4f;
-  background-color: transparent;
+  color: white;
 }
 
-/* line 29, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+/* line 28, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
 .container {
   position: relative;
   min-height: 100%;
@@ -190,31 +189,63 @@ a, a:link, a:visited, a:hover {
   font-weight: 100;
 }
 
+/* line 35, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+.line {
+  margin-bottom: 6px;
+}
+
+/* line 38, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+.line span {
+  background-color: red;
+  color: white;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
 @media screen and (max-width: 700px) {
-  /* line 38, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
-  .container {
-    letter-spacing: 1.5px;
-    font-size: 2.5em;
+  /* line 46, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  a, a:link, a:visited, a:hover {
+    text-decoration: none;
+    color: white;
   }
 
-  /* line 42, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 50, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  .container {
+    letter-spacing: 1.5px;
+    font-size: 2.4em;
+  }
+
+  /* line 54, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .about {
     margin: 50px;
     font-size: large;
   }
 
-  /* line 46, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
-  .pos-details, .cun-details, .stt-details, .anu-details, .bze-details {
-    font-size: 0.5em;
+  /* line 58, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  .cun-details, .stt-details, .anu-details, .bze-details {
+    font-size: 0.4em;
   }
 
-  /* line 49, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 61, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  .pos-details {
+    font-size: 0.7em;
+  }
+
+  /* line 64, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .line {
-    margin-top: 0.2em;
-    background-color: rgba(255, 255, 255, 0.1);
+    margin-bottom: 3px;
   }
 
-  /* line 53, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 67, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  .line span {
+    margin-top: 0.2em;
+    background-color: red;
+    color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  /* line 74, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer {
     font-family: Helvetica, Arial, Sans-Serif;
     letter-spacing: 1.25px;
@@ -222,24 +253,27 @@ a, a:link, a:visited, a:hover {
     font-weight: 100;
   }
 
-  /* line 59, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 80, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer-el {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: red;
+    color: white;
+    padding-left: 4px;
+    padding-right: 4px;
   }
 }
 @media screen and (min-width: 701px) {
-  /* line 65, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 89, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .container {
     letter-spacing: 2.5px;
   }
 
-  /* line 68, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 92, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .about {
     margin: 75px;
     font-size: xx-large;
   }
 
-  /* line 72, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 96, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .cun-details {
     float: right;
     padding-right: 10%;
@@ -247,7 +281,7 @@ a, a:link, a:visited, a:hover {
     min-width: 45%;
   }
 
-  /* line 78, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 102, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .stt-details {
     float: right;
     padding-right: 10%;
@@ -255,7 +289,7 @@ a, a:link, a:visited, a:hover {
     min-width: 45%;
   }
 
-  /* line 84, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 108, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .pos-details {
     top: 590px;
     right: 100px;
@@ -263,7 +297,7 @@ a, a:link, a:visited, a:hover {
     font-size: 0.9em;
   }
 
-  /* line 90, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 114, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .anu-details {
     float: right;
     padding-right: 10%;
@@ -271,22 +305,30 @@ a, a:link, a:visited, a:hover {
     min-width: 45%;
   }
 
-  /* line 96, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 120, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .bze-details {
     float: right;
     padding-right: 10%;
     min-width: 45%;
   }
 
-  /* line 102, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 126, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer {
     font-family: monospace;
     letter-spacing: 1.25px;
     font-size: 250%;
     font-weight: 100;
   }
+
+  /* line 132, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  .footer-el {
+    background-color: red;
+    color: white;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
 }
-/* line 110, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+/* line 140, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
 .place-footer {
   position: absolute;
   bottom: 15px;
