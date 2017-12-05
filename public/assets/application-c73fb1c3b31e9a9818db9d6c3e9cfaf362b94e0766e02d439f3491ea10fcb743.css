@@ -177,7 +177,7 @@ div#bg {
 /* line 23, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
 a, a:link, a:visited, a:hover {
   text-decoration: none;
-  color: white;
+  color: #080c50;
 }
 
 /* line 28, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
@@ -196,8 +196,8 @@ a, a:link, a:visited, a:hover {
 
 /* line 38, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
 .line span {
-  background-color: red;
-  color: white;
+  background-color: white;
+  color: #080c50;
   padding-left: 4px;
   padding-right: 4px;
 }
@@ -206,7 +206,7 @@ a, a:link, a:visited, a:hover {
   /* line 46, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   a, a:link, a:visited, a:hover {
     text-decoration: none;
-    color: white;
+    color: #080c50;
   }
 
   /* line 50, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
@@ -239,8 +239,8 @@ a, a:link, a:visited, a:hover {
   /* line 67, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .line span {
     margin-top: 0.2em;
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: #080c50;
     padding-left: 4px;
     padding-right: 4px;
   }
@@ -255,8 +255,8 @@ a, a:link, a:visited, a:hover {
 
   /* line 80, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer-el {
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: #080c50;
     padding-left: 4px;
     padding-right: 4px;
   }
@@ -322,8 +322,8 @@ a, a:link, a:visited, a:hover {
 
   /* line 132, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer-el {
-    background-color: red;
-    color: white;
+    background-color: white;
+    color: #080c50;
     padding-left: 4px;
     padding-right: 4px;
   }
