@@ -196,7 +196,7 @@ a, a:link, a:visited, a:hover {
 
 /* line 38, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
 .line span {
-  background-color: white;
+  background-color: darkgray;
   color: #080c50;
   padding-left: 4px;
   padding-right: 4px;
@@ -239,7 +239,7 @@ a, a:link, a:visited, a:hover {
   /* line 67, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .line span {
     margin-top: 0.2em;
-    background-color: white;
+    background-color: darkgray;
     color: #080c50;
     padding-left: 4px;
     padding-right: 4px;
@@ -255,7 +255,7 @@ a, a:link, a:visited, a:hover {
 
   /* line 80, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer-el {
-    background-color: white;
+    background-color: darkgray;
     color: #080c50;
     padding-left: 4px;
     padding-right: 4px;
@@ -322,7 +322,7 @@ a, a:link, a:visited, a:hover {
 
   /* line 132, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer-el {
-    background-color: white;
+    background-color: darkgray;
     color: #080c50;
     padding-left: 4px;
     padding-right: 4px;
