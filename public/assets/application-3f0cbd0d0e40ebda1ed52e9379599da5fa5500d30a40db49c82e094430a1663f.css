@@ -196,7 +196,7 @@ a, a:link, a:visited, a:hover {
 
 /* line 38, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
 .line span {
-  background-color: darkgray;
+  background-color: #DCDCDC;
   color: #080c50;
   padding-left: 4px;
   padding-right: 4px;
@@ -216,36 +216,43 @@ a, a:link, a:visited, a:hover {
   }
 
   /* line 54, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
-  .about {
-    margin: 50px;
-    font-size: large;
+  .title {
+    font-size: 1.5em;
+    font-weight: bold;
   }
 
   /* line 58, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  .about {
+    margin: 50px;
+    font-size: large;
+    line-height: 1.7em;
+  }
+
+  /* line 63, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .cun-details, .stt-details, .anu-details, .bze-details {
     font-size: 0.4em;
   }
 
-  /* line 61, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 66, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .pos-details {
     font-size: 0.7em;
   }
 
-  /* line 64, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 69, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .line {
     margin-bottom: 3px;
   }
 
-  /* line 67, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 72, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .line span {
     margin-top: 0.2em;
-    background-color: darkgray;
+    background-color: #DCDCDC;
     color: #080c50;
     padding-left: 4px;
     padding-right: 4px;
   }
 
-  /* line 74, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 79, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer {
     font-family: Helvetica, Arial, Sans-Serif;
     letter-spacing: 1.25px;
@@ -253,27 +260,34 @@ a, a:link, a:visited, a:hover {
     font-weight: 100;
   }
 
-  /* line 80, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 85, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer-el {
-    background-color: darkgray;
+    background-color: #DCDCDC;
     color: #080c50;
     padding-left: 4px;
     padding-right: 4px;
   }
 }
 @media screen and (min-width: 701px) {
-  /* line 89, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 94, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .container {
     letter-spacing: 2.5px;
   }
 
-  /* line 92, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 97, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  .title {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  /* line 101, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .about {
     margin: 75px;
     font-size: xx-large;
+    line-height: 2.1em;
   }
 
-  /* line 96, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 106, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .cun-details {
     float: right;
     padding-right: 10%;
@@ -281,7 +295,7 @@ a, a:link, a:visited, a:hover {
     min-width: 45%;
   }
 
-  /* line 102, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 112, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .stt-details {
     float: right;
     padding-right: 10%;
@@ -289,7 +303,7 @@ a, a:link, a:visited, a:hover {
     min-width: 45%;
   }
 
-  /* line 108, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 118, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .pos-details {
     top: 590px;
     right: 100px;
@@ -297,7 +311,7 @@ a, a:link, a:visited, a:hover {
     font-size: 0.9em;
   }
 
-  /* line 114, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 124, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .anu-details {
     float: right;
     padding-right: 10%;
@@ -305,14 +319,14 @@ a, a:link, a:visited, a:hover {
     min-width: 45%;
   }
 
-  /* line 120, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 130, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .bze-details {
     float: right;
     padding-right: 10%;
     min-width: 45%;
   }
 
-  /* line 126, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 136, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer {
     font-family: monospace;
     letter-spacing: 1.25px;
@@ -320,15 +334,15 @@ a, a:link, a:visited, a:hover {
     font-weight: 100;
   }
 
-  /* line 132, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+  /* line 142, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
   .footer-el {
-    background-color: darkgray;
+    background-color: #DCDCDC;
     color: #080c50;
     padding-left: 4px;
     padding-right: 4px;
   }
 }
-/* line 140, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
+/* line 150, /Users/chrislake/Sites/goonyc/app/assets/stylesheets/application.scss */
 .place-footer {
   position: absolute;
   bottom: 15px;
