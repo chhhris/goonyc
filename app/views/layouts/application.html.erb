@@ -20,22 +20,24 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <style>
-      .background-image {
-        background-image: url("https://d3v269glur4zll.cloudfront.net/<%= @trip.try(:code).try(:downcase) %>.jpg");
-        background-repeat: no-repeat;
-        background-position: center center;
-        background-attachment:fixed;
+      <% if action_name != 'about' %>
+        .background-image {
+          background-image: url("https://d3v269glur4zll.cloudfront.net/<%= @trip.try(:code).try(:downcase) %>.jpg");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-attachment:fixed;
 
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-      }
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+      <% end %>
     </style>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="<%= 'background-image' if @trip.present? %>">
+  <body class="<%= 'background-image' if @trip.present? && action_name != 'about' %>">
     <div id="spinner"></div>
     <div id="bg">
       <%= yield %>
