@@ -35,7 +35,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body class="<%= 'background-image' if @trip %>">
+  <body class="<%= 'background-image' if @trip.present? %>">
     <div id="spinner"></div>
     <div id="bg">
       <%= yield %>

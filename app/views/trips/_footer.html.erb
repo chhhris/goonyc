@@ -1,4 +1,9 @@
+<% about ||= nil %>
 <footer class="footer place-footer">
-  <span class="footer-el"><a href="/about">about</a></span>
+  <% if about.present? %>
+    <span class="footer-el"><a href="/">home</a></span>
+  <% else %>
+    <span class="footer-el"><a href="/about">about</a></span>
+  <% end %>
   <span class="footer-el" style="margin-left: 50px;"><a href="mailto:getoutofnyc@gmail.com?subject=Hello">contact</a></span>
 </footer>
