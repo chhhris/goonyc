@@ -3,9 +3,11 @@ class TemperaturesWorker
 
   def perform(url, trip_id)
     avg_high = RestClient.get(url) do |resp|
-      parsed_json = JSON.parse(resp.body)
-      if parsed_json['trip'].present?
-        parsed_json['trip']['temp_high']['avg']['F']
+      if resp.body
+        parsed_json = JSON.parse(resp.body)
+        if parsed_json['trip'].present?
+          parsed_json['trip']['temp_high']['avg']['F']
+        end
       end
     end
 

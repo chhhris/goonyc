@@ -1,5 +1,5 @@
 class TripsController < ApplicationController
-  before_filter :http_basic_auth, only: :oj
+  before_action :http_basic_auth, only: :oj
   before_action :set_trip, only: [:show, :edit, :destroy]
   after_action :remove_old_trips, only: :refresh
   after_action :update_temperatures, only: :refresh
@@ -27,7 +27,7 @@ class TripsController < ApplicationController
   def refresh
     Trip.generate_flights
 
-    redirect_to :oj
+    redirect_to oj_path(refresh: true)
   end
 
   def about
@@ -133,7 +133,7 @@ class TripsController < ApplicationController
       if Trip.where(featured: true).blank?
         Trip.last.update_column(:featured, true)
       end
-      @trips = Trip.admin_trips_display
+      @trips = Trip.admin_trips_display!
     end
 
     def remove_old_trips
