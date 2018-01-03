@@ -12572,9 +12572,32 @@ var o,i,s,a,u;return i=null!=n?n:{},a=i.restorationIdentifier,s=i.restorationDat
 
 
 
+// $( document ).ready(function() {
+//   var refreshed = window.location.search;
+
+//   if (refreshed.length > 0) {
+//     setTimeout(activateSpinner, 5000, function(){
+//       var url = location.host + location.pathname;
+//       $(location).attr('href',url);
+//     });
+//   }
+// });
 
 $( document ).ready(function() {
-  $('button.js-refresh-btn').click(function() {
+  var refreshed = window.location.search;
+
+  if (refreshed.length > 0) {
+    activateSpinner();
+    setTimeout(function(){
+      var url = location.host + location.pathname;
+      window.history.pushState("object or string", "Title", "/oj" );
+      location.reload();
+    }, 30000);
+  }
+
+  $('button.js-refresh-btn').click(activateSpinner);
+
+  function activateSpinner() {
     var opts = {
       lines: 13, // The number of lines to draw
       length: 28, // The length of each line
@@ -12602,5 +12625,5 @@ $( document ).ready(function() {
     var spinner = new Spinner(opts).spin(target);
     var divHtml = '<div style="text-align: center; padding-top: 180px; font-size: large; color: #464343;"><span>This may take a few minutes...</span></div>';
     target.insertAdjacentHTML('afterbegin', divHtml);
-  });
+  }
 });
