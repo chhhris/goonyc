@@ -11,4 +11,7 @@ Rails.application.routes.draw do
   post '/select', to: 'trips#select'
   # post '/:id', to: 'trips#update'
   get '*url', to: 'trips#show'
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
 end
