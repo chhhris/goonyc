@@ -14,6 +14,8 @@ class Trip < ApplicationRecord
     adults: 1,
     children: 0,
     infants: 0,
+    stops: 0,
+    sortOrder: 'asc',
     cabinclass: 'Economy'
   }
 
@@ -42,24 +44,22 @@ class Trip < ApplicationRecord
 
       departure_dates.each_with_index do |depart_at, index|
         return_at = return_dates[index]
-
-        DESTINATION_NAME_MAPPING.each do |code, name|
+        Trip::DESTINATION_NAME_MAPPING.each do |code, name|
           search_api(code.to_s, depart_at, return_at)
         end
       end
     end
 
     def search_api(code, depart_at, return_at)
-      params = PARAMS.merge( destinationplace: code, outbounddate: depart_at, inbounddate: return_at)
-      post_url = "http://business.skyscanner.net/apiservices/pricing/v1.0/?apikey=#{FLIGHT_API_KEY}"
+      params = Trip::PARAMS.merge( destinationplace: code, outbounddate: depart_at, inbounddate: return_at)
+      url = "http://business.skyscanner.net/apiservices/pricing/v1.0/?apikey=#{Trip::FLIGHT_API_KEY}"
 
-      FlightsWorker.perform_async(post_url, params)
+      FlightsWorker.perform_async(url, params)
     end
 
     def update_temperatures
       Trip.where(temperature: nil).each do |trip|
-        p_depart = trip.depart_at.strftime('%m%d')
-        p_return = trip.return_at.strftime('%m%d')
+        p_depart, p_return = trip.depart_at.strftime('%m%d'), trip.return_at.strftime('%m%d')
         destination = Trip::DESTINATION_NAME_MAPPING[trip.code.to_sym][:weather_lookup]
         url = "http://api.wunderground.com/api/#{Trip::WEATHER_API_KEY}/planner_#{p_depart}#{p_return}/q/#{destination}.json"
         TemperaturesWorker.perform_async(url, trip.id)

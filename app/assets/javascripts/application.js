@@ -36,7 +36,7 @@ $( document ).ready(function() {
       var url = location.host + location.pathname;
       window.history.pushState("object or string", "Title", "/oj" );
       location.reload();
-    }, 30000);
+    }, 45000);
   }
 
   $('button.js-refresh-btn').click(activateSpinner);
