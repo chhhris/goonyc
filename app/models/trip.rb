@@ -38,8 +38,8 @@ class Trip < ApplicationRecord
     end
 
     def generate_flights
-      first_date = Date.parse('Thursday') + 14.days
-      departure_dates = [ first_date, first_date + 14.days, first_date + 28.days ].map { |d| d.strftime('%Y-%m-%d') }
+      first_date = Date.parse('Thursday') + 21.days
+      departure_dates = [ first_date + 14.days ].map { |d| d.strftime('%Y-%m-%d') }
       return_dates = departure_dates.map { |departure| Date.parse(departure) + 3.days }.map { |d| d.strftime('%Y-%m-%d') }
 
       departure_dates.each_with_index do |depart_at, index|

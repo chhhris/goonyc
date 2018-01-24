@@ -18,6 +18,10 @@ module TripDestinations
     MGA: { name: 'Nicaragua', weather_lookup: 'NI/Bluefields' },
     STT: { name: 'Saint Thomas', weather_lookup: 'STT' },
     POS: { name: 'Port of Spain', weather_lookup: 'TT/Piarco' },
-    PTP: { name: 'Guadalupe', weather_lookup: 'PTP' }
+    PTP: { name: 'Guadalupe', weather_lookup: 'PTP' },
+    PSE: { name: 'Ponce, Puerto Rico', weather_lookup: 'PSE' },
+    PLS: { name: 'Turks and Caicos', weather_lookup: 'PLS' },
+    SDQ: { name: 'Santo Domingo, Dominican Republic', weather_lookup: 'SDQ' }
+    # ECP: { name: 'Panama City', weather_lookup: 'ECP' }
   }
 end

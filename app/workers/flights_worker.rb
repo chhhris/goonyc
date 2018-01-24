@@ -26,8 +26,10 @@ class FlightsWorker
   def get(polling_url, params)
     RestClient.get("#{polling_url}?apiKey=#{Trip::FLIGHT_API_KEY}", { accept: :json }) do |response, request, result, &block|
       puts "#### GET response.code #{response.code}"
-      return unless response.code == 200
-      cheapest_flight = JSON.parse(response)['Itineraries'].first
+      return unless response.code < 300
+      parsed_response = JSON.parse(response)
+      puts "#### parsed_response #{parsed_response}"
+      cheapest_flight = parsed_response['Itineraries'].first
 
       if cheapest_flight.present?
         puts "#### params #{params}"
@@ -39,7 +41,7 @@ class FlightsWorker
           depart_at: params['outbounddate'].to_date,
           return_at: params['inbounddate'].to_date
         ).first_or_initialize
-        trip.name = Trip::DESTINATION_NAME_MAPPING[code.to_sym][:name]
+        trip.name = Trip::DESTINATION_NAME_MAPPING[trip.code.to_sym][:name]
         trip.price = pricing_options['Price']
         trip.url = pricing_options['DeeplinkUrl']
 
